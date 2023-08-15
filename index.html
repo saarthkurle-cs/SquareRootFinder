@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title> Square Root Finder </title>
+	<style>
+		*{font-size: 50px;}
+		body{background-color: lightblue;}
+	</style>
+	<script>
+		function solve(){
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			if(num.value == ""){
+				alert("You did not enter an integer");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			let n = parseInt(num.value);
+			let r = Math.sqrt(n);
+			ans.innerHTML = "The square root of this integer is" + r;
+		}
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1> Square Root Finder </h1>
+		<form onsubmit="solve()">
+			<input type="number" id="num" placeholder="enter an integer"></input>
+			<br><br>
+			<input type="submit" value="Find sqrt">	</input>
+		</form>
+		<h1 id="ans"></h1>
+	</center>
+</body>
+</html>
